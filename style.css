@@ -24,7 +24,7 @@ body{
     background-size: 5%;
     background-repeat: repeat;
     animation: bg-animation 45s linear infinite;
-    filter: brightness(0.2);
+    filter: brightness(0.1);
 }
 
 @keyframes bg-animation{
@@ -47,6 +47,10 @@ body{
     background: linear-gradient(45deg, #000000, #2a2a2a);
     box-shadow: 0 5px 80px black;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #logo-container{
@@ -75,6 +79,14 @@ a{
     padding: 0 30px;
 }
 
+.fa-instagram, .fa-discord{
+    transition: 0.3s ease-in-out;
+}
+
+.fa-instagram:hover, .fa-discord:hover{
+    transform: scale(1.2);
+}
+
 #buttons{
     display: flex;
     justify-content: center;
@@ -82,6 +94,7 @@ a{
     width: 100%;
     margin-top: 20px;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .button-redirect{
@@ -89,6 +102,7 @@ a{
     font-size: 20px;
     text-align: center;
     padding: 10px;
+    width: 25rem;
     border-radius: 10px;
     color: #fff;
     transition: 0.3s ease-in-out;
@@ -107,26 +121,7 @@ a{
     #content-container{
         width: 100%;
     }
-}
-
-#title{
-    font-size: 30px;
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-    font-weight: 600;
-}
-
-#form{
-    color: white;
-    font-size: 20px;
-}
-#form label{
-    display: inline-block;
-}
-#form input{
-    background: linear-gradient(45deg, white, #e7e7e7);
-    border: none;
-    width: 20rem;
-    height: 2rem;
+    .button-redirect{
+        width: 20rem;
+    }
 }
