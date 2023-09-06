@@ -35,26 +35,26 @@ body{
         background-position: 50rem 50rem;
     }
 }
-#container{
+.container{
     flex-direction: column;
     display: flex;
     align-items: center;
 }
 
-#content-container{
+#done{
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.content-container{
     height: 100vh;
-    margin: 0;
     width: 38%;
     background: linear-gradient(45deg, #000000, #2a2a2a);
     box-shadow: 0 5px 80px black;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-#logo-container{
+.logo-container{
     width: 100%;
     height: auto;
     display: flex;
@@ -62,68 +62,78 @@ body{
     margin: 40px 0;
 }
 
-#logo-container img{
+.logo-container img{
     width: 50%;
     height: auto;
 }
 
-#social-media-container{
-    font-size: 40px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-a{
-    text-decoration: none;
-}
-#social-media-icons{
-    padding: 0 30px;
-}
-
-.fa-instagram, .fa-discord{
-    transition: 0.3s ease-in-out;
-}
-
-.fa-instagram:hover, .fa-discord:hover{
-    transform: scale(1.2);
-}
-
-#buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+#form-title{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
     margin-top: 20px;
-    flex-direction: column;
-    overflow: hidden;
 }
 
-.button-redirect{
+.form-input{
+    background: none;
+    font-size: 17px;
+    margin: 20px 0 20px 20px;
+    width: 90%;
+    padding-bottom: 3px;
+    border: none;
+    border-bottom: 2px solid white;
+    color: #cecdcd;
+}
+
+input:focus{
+    outline: none;
+}
+
+.button{
+    background: none;
     border: 2px solid #fff;
     font-size: 20px;
     text-align: center;
-    padding: 10px;
-    width: 25rem;
+    padding: 5px;
+    width: 10rem;
     border-radius: 10px;
     color: #fff;
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.button-redirect:hover{
+.button:hover{
     background: #fff;
     color: var(--black);
 }
 
-.button-redirect{
-    margin-top: 15px;
+#button-container{
+    display: flex;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 768px){
-    #content-container{
+    .content-container{
         width: 100%;
     }
     .button-redirect{
         width: 20rem;
     }
+    .form-input{
+        font-size: 10px;
+    }
+}
+
+#required-tag{
+    color: #f5ac2b;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+#subtitle{
+    font-size: 15px;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
 }
