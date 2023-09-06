@@ -1,3 +1,23 @@
+<?php
+if(isset($_POST['submit'])){
+    $dbHost = 'cefetcon-database-do-user-14618291-0.b.db.ondigitalocean.com';
+    $dbUsername = 'doadmin';
+    $dbPassword = 'AVNS_fcmKAvG6Tb5BRJXnPut';
+    $dbName = 'cefetcon';
+    $dbPort = '25060';
+
+    $conexao = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName, $dbPort);
+
+    $name = $_POST['name'];
+    $identification = $_POST['identification'];
+    $cellphone = $_POST['cellphone'];
+    $email = $_POST['email'];
+    $instagram = $_POST['instagram'];
+    $sql = "INSERT INTO artistalley (name, identification, cellphone, email, instagram) VALUES ('$name', '$identification', '$cellphone', '$email', '$instagram')";
+    $result = mysqli_query($conexao, $sql);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +36,6 @@
             <img src="/img/colored-logo-png.svg" alt="">
         </div>
         <div id="form-title">Inscrições artist alley</div>
-        <form action="submit.php" method="post">
-            <div class="input-container"><input type="text" placeholder="Nome completo do artista ou razão social da empresa" id="name" name="name" class="form-input" required></div>
-            <div class="input-container"><input type="text" placeholder="CPF ou CNPJ da empresa" id="identification" name="identification" class="form-input" required></div>
-            <div class="input-container"><input type="text" placeholder="Telefone celular do artista (com DDD)" id="cellphone" name="cellphone" class="form-input" required></div>
-            <div class="input-container"><input type="text" placeholder="E-mail do artista" id="email" name="email" class="form-input" required></div>
-            <div class="input-container"><input type="text" placeholder="Instagram do artista" id="instagram" name="instagram" class="form-input" required></div>
-            <div id="button-container"><input type="submit" class="button" name="submit" id="submit" value="Enviar"></div>
-        </form>
+        <div id="subtitle">Inscrição realizada com sucesso!</div>
     </section>
 </html>
